@@ -16,16 +16,14 @@ function fillingPreviousValues() {
   let savedMessage = localStorage.getItem(STORAGE_KEY);
   savedMessage = JSON.parse(savedMessage);
 
-
-    if (savedMessage) {
-
-      if (savedMessage.email) {
-          email.value = savedMessage.email;
-          formData.email = savedMessage.email;
-      }
+  if (savedMessage) {
+    if (savedMessage.email) {
+      email.value = savedMessage.email;
+      formData.email = savedMessage.email;
+    }
     if (savedMessage.message) {
-        message.value = savedMessage.message;
-        formData.message = savedMessage.message;
+      message.value = savedMessage.message;
+      formData.message = savedMessage.message;
     }
   }
 }
@@ -36,8 +34,8 @@ function onFormInput(evt) {
 }
 
 function onFormSubmit(evt) {
-    evt.preventDefault();
-    console.log(formData);
+  evt.preventDefault();
+  console.log(formData);
   evt.currentTarget.reset();
   localStorage.removeItem(STORAGE_KEY);
 }
