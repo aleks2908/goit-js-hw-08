@@ -1,5 +1,5 @@
 import Player from '@vimeo/player';
-var throttle = require('lodash.throttle');
+import throttle from 'lodash.throttle';
 
 const iframe = document.querySelector('iframe');
 
@@ -30,9 +30,7 @@ if (lastCurrentTime) {
 player.on(
   'timeupdate',
   throttle(function ({ seconds }) {
-    // console.log(data.seconds);
     localStorage.setItem('videoplayer-current-time', seconds);
-    // 'videoplayer-current-time';
   }, 1000)
 );
 
